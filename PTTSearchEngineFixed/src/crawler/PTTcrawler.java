@@ -93,6 +93,8 @@ public class PTTcrawler {
 	 */
 	public static void singleArticle(String uri, String likes){
 		
+	    try{
+		    
 		Document page = CrawlerPack.start()
 		    .addCookie("over18","1")  // 必需在 getFromXXX 前設定Cookie
 		    .getFromHtml(uri);
@@ -275,7 +277,13 @@ public class PTTcrawler {
 		} catch (NullPointerException e) {
 			e.printStackTrace();
 		}
+		    
+	    }catch(IllegalArgumentException e){
+		e.printStackTrace();
 	}
+	
+	
+   }
 	
 
 	
