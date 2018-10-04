@@ -272,6 +272,8 @@ public class PTTcrawler {
 			writer.close();
 		} catch (IOException e) {
 			e.printStackTrace();
+		} catch (NullPointerException e) {
+			e.printStackTrace();
 		}
 	}
 	
